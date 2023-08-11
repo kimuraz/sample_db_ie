@@ -90,6 +90,9 @@ CREATE TABLE "public.turma" (
 	"id" serial NOT NULL UNIQUE,
 	"id_professor_resp" integer NOT NULL,
 	"id_materia" integer NOT NULL,
+	"data_inicio" DATE NOT NULL,
+	"data_final" DATE NOT NULL,
+	"link_sala_de_aula" VARCHAR(255) NOT NULL,
 	CONSTRAINT "turma_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
@@ -195,16 +198,3 @@ ALTER TABLE "public.materia" ADD CONSTRAINT "materia_fk0" FOREIGN KEY ("id_curso
 
 ALTER TABLE "public.nota" ADD CONSTRAINT "nota_fk0" FOREIGN KEY ("id_avaliacao") REFERENCES "public.avaliacao"("id");
 ALTER TABLE "public.nota" ADD CONSTRAINT "nota_fk1" FOREIGN KEY ("id_aluno") REFERENCES "public.aluno"("id");
-
-
-
-
-
-
-
-
-
-
-
-
-
